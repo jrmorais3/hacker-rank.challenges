@@ -1,12 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace WeekOne.BreakingTheRecords
 {
-    public class Result
+    public class BreakingRecords
     {
         public static int[] breakingRecords(List<int> scores)
         {
@@ -36,5 +33,16 @@ namespace WeekOne.BreakingTheRecords
             return result;
 
         }
+        
+        /*
+        static void Main(string[] args)
+        {
+            List<int> scores = new List<int> { 10, 5, 20, 20, 4, 5, 2, 25, 1};
+            int[] result = breakingRecords(scores);
+            Console.WriteLine(String.Join(" ", result));
+            Console.ReadKey();
+        }
+        */
+        
     }
 }
