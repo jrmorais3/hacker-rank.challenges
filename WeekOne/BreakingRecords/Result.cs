@@ -1,17 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using static System.Formats.Asn1.AsnWriter;
 
-namespace WeekOne.BreakingTheRecords
+namespace WeekOne.BreakingRecords
 {
-    public class BreakingRecords
+    public class Result
     {
-        public static int[] breakingRecords(List<int> scores)
+        public static void breakingRecords(List<int> scores)
         {
             var topRecord = scores[0];
             var topResults = 0;
             var lowRecord = scores[0];
             var lowResults = 0;
-            int[] result = new int [2];
+            int[] result = new int[2];
 
             for (int i = 0; i < scores.Count; i++)
             {
@@ -23,26 +25,14 @@ namespace WeekOne.BreakingTheRecords
                 else if (scores[i] < lowRecord)
                 {
                     lowRecord = scores[i];
-                    lowResults++; 
+                    lowResults++;
                 }
             }
 
             result[0] = topResults;
             result[1] = lowResults;
-            
-            return result;
 
+            Console.WriteLine(string.Join(" ", result));
         }
-        
-        /*
-        static void Main(string[] args)
-        {
-            List<int> scores = new List<int> { 10, 5, 20, 20, 4, 5, 2, 25, 1};
-            int[] result = breakingRecords(scores);
-            Console.WriteLine(String.Join(" ", result));
-            Console.ReadKey();
-        }
-        */
-        
     }
 }
